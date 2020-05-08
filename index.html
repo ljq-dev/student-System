@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./js/trunPage/trunPage.css">
+
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="head">
+        <div class="navbar bg text-center">
+            <button class="btn btn-outline-light d-md-none " data-target="#coll" data-toggle="collapse">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false">
+					<title>Menu</title>
+					<path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path>
+				</svg>
+            </button>
+
+            <div class="navbar-brand mx-auto mx-md-0 text-light">
+                <img src="./img/logo.png" style="width: 3rem" alt="">
+                <span>渡</span>
+                <span>一</span>
+                <span>教</span>
+                <span>育</span>
+            </div>
+
+            <div class="collapse position-absolute list text-center" id="coll">
+                <nav class="navbar-nav">
+                    <a href="#student-list" data-toggle="tab" class="nav-link text-light">学生列表</a>
+                    <a href="#student-add" data-toggle="tab" class="nav-link text-light">新增学生</a>
+                    <a href="#echart" data-toggle="tab" class="nav-link text-light">统计图表</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid main">
+        <div class="row">
+            <!-- 左侧区域 -->
+            <div class="col-auto d-none d-md-block pl-4 pt-4 pr-0 leftCon">
+                <h5 class="font-weight-bold text-light mb-4">学生管理</h5>
+                <nav class="nav flex-column text-center">
+                    <a href="#student-list" data-toggle="tab" class="nav-link text-light py-3 font-weight-bold active">学生列表</a>
+                    <a href="#student-add" data-toggle="tab" class="nav-link text-light py-3 font-weight-bold">新增学生</a>
+                    <a href="#student-echarts" data-toggle="tab" class="nav-link text-light py-3 font-weight-bold">统计图表</a>
+                </nav>
+            </div>
+            <!-- 右侧区域 -->
+            <div class="col tab-content rightCon">
+                <!-- 学生列表 -->
+                <div id="student-list" class="tab-pane fade pt-5 show active">
+                    <!-- 搜索 -->
+                    <div class="form-group form-inline">
+                        <label for="search" class="font-weight-bold">搜索：</label>
+                        <input type="text" id="search" class="form-control" placeholder="请输入学号">
+                        <button class="btn btn-dark ml-3">搜索</button>
+                    </div>
+                    <!-- <div class="search ">
+                        <label for="key">关键字搜索：<input placeholder="email、sNo" type="text" id="key"></label>
+                        <button>查询</button>
+                    </div> -->
+
+                    <!-- 表单 -->
+                    <table class="table table-borderless text-center">
+                        <thead class="table-secondary">
+                            <tr>
+                                <th>学号</th>
+                                <th>姓名</th>
+                                <th>性别</th>
+                                <th>邮箱</th>
+                                <th>年龄</th>
+                                <th>手机号</th>
+                                <th>住址</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody" class="table-light">
+                            
+                        </tbody>
+                    </table>
+
+                    <!-- 模态框 -->
+                    <div class="modal fade" id="modal">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title">编辑表单</h5>
+                              <button type="button" class="close" data-dismiss="modal">
+                                <span>&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="edit" action="#" class="form w-75 mx-auto ">
+                                    <div class="form-group row">
+                                        <label for="sno1" class="col-3">学号：</label>
+                                        <input id="sno1" type="text" class="form-control col-9">
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="name1" class="col-3">姓名：</label>
+                                        <input id="name1" type="text" class="form-control col-9">
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="sex" class="col-3">性别：</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="sex" id="male1" value="0">
+                                            <label class="form-check-label" for="male1">男</label>
+                                          </div>
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="sex" id="female1" value="1">
+                                            <label class="form-check-label" for="female1">女</label>
+                                          </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="email1" class="col-3">邮箱：</label>
+                                        <input id="email1" type="text" class="form-control col-9">
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="birth1" class="col-3">出生年：</label>
+                                        <input id="birth1" class="form-control col-9" type="text">
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="phone1" class="col-3">手机：</label>
+                                        <input id="phone1" type="text" class="form-control col-9">
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="address1" class="col-3">地址：</label>
+                                        <input id="address1" type="text" class="form-control col-9">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-success">提交</button>
+                              <button type="button" class="btn btn-primary">重置</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <!-- <div class="modal">
+                        <div class="modal-content">
+                            <h3>编辑表单</h3>
+                            <form>
+                                <div>
+                                    <label for="name">姓名</label>   for-id ; name用来获取form.name.value
+                                    <input type="text" id="name" name="name">
+                                </div>
+                                <div>
+                                    <label for="sex">性别</label>
+                                    <input type="radio" name="sex" id="male" value=0 checked>
+                                    <label for="male" class="no">男</label>
+                                    <input type="radio" name="sex" id="female" value=1>
+                                    <label for="female" class="no">女</label>
+                                </div>
+                                <div>
+                                    <label for="email">邮箱</label>
+                                    <input type="text" id="email" name="email">
+                                </div>
+                                <div>
+                                    <label for="number">学号</label>
+                                    <input type="text" readonly id="number" name="sNo">
+                                </div>
+                                <div>
+                                    <label for="birth">出生年</label>
+                                    <input type="text" id="birth" name="birth">
+                                </div>
+                                <div>
+                                    <label for="phone">手机号</label>
+                                    <input type="text" id="phone" name="phone">
+                                </div>
+                                <div>
+                                    <label for="address">住址</label>
+                                    <input type="text" id="address" name="address">
+                                </div>
+                                <div>
+                                    <label for=""></label>
+                                    <input type="submit" class="modalBtn">
+                                </div>
+                            </form>
+                        </div>
+                    </div> -->
+
+                    <!-- 分页 -->
+                    <div class="trun-page">
+                        
+                    </div>
+                </div>
+
+                <!-- 新增学生 -->
+                <div id="student-add" class="tab-pane fade show">
+                    <form id="student-add-form" action="#" class="form w-50 mx-auto mt-5 pt-5">
+                        <div class="form-group row">
+                            <label for="sno" class="col-2">学号：</label>
+                            <input id="sno" type="text" class="form-control col-10" name="sno">
+                        </div>
+                        <div class="form-group row">
+                            <label for="name" class="col-2">姓名：</label>
+                            <input id="name" type="text" class="form-control col-10" name="name">
+                        </div>
+                        <div class="form-group row">
+                            <label for="sex" class="col-2">性别：</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="sex" id="male" value="0">
+                                <label class="form-check-label" for="male">男</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="sex" id="female" value="1">
+                                <label class="form-check-label" for="female">女</label>
+                              </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-2">邮箱：</label>
+                            <input id="email" type="text" class="form-control col-10" name="email">
+                        </div>
+                        <div class="form-group row">
+                            <label for="birth" class="col-2">出生年：</label>
+                            <input id="birth" class="form-control col-10" type="text" class="col-10" name="birth">
+                        </div>
+                        <div class="form-group row">
+                            <label for="phone" class="col-2">手机：</label>
+                            <input id="phone" type="text" class="form-control col-10" name="phone">
+                        </div>
+                        <div class="form-group row">
+                            <label for="address" class="col-2">地址：</label>
+                            <input id="address" type="text" class="form-control col-10" name="address">
+                        </div>
+                        <div class="form-group row">
+                            <button id="submit" class="btn btn-success ml-auto mr-3 btn-lg">添加</button><button class="btn btn-secondary mr-auto btn-lg">重置</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 图表 -->
+                <div id="student-echarts" class="tab-pane fade show">
+                    <div class="row">
+                        <div class="col-5 mx-auto border border-dark">
+                            <div id="echart1"></div>
+                        </div>
+                        <div class="col-5 mx-auto border border-dark">
+                            <div id="echart2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="./js/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+        
+    <script src="./js/echarts/echarts.js"></script> 
+    <script src="./js/echarts/pie.js"></script>
+
+    <script src="./js/trunPage/trunPage.js"></script>
+    <script src="./js/index.js"></script>
+
+</body>
+</html>

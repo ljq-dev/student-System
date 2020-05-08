@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./trunPage.css">
+</head>
+<body>
+    
+    <div class="demo"></div>
+    
+    <script src="../jquery.js"></script>
+    <script src="./trunPage.js"></script>
+    <script>
+        $('.demo').trunPage({
+            nowPage: 2,
+            lastPage: 10,
+            changePage: function (page){
+                console.log(page);
+            }
+        })
+    </script>
+</body>
+</html>

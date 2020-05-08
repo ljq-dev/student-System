@@ -1,0 +1,201 @@
+html{
+    font-size: 14px;
+}
+.head{
+    height: 4.5rem;
+    background: linear-gradient(90deg, #333, #111, #999);
+}
+.head .bg{
+    background: url(../img/bg.png);
+}
+.head .navbar-brand span:nth-of-type(2){
+    animation-delay: 0.25s;
+}
+.head .navbar-brand span:nth-of-type(3){
+    animation-delay: 0.5s;
+}.head .navbar-brand span:nth-of-type(4){
+    animation-delay: 0.75s;
+}
+.head .navbar-brand span{
+    margin-left: 1rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    vertical-align: middle;
+    text-shadow: 4px 2px 6px #ccc;
+    animation: jumping .7s infinite alternate,
+               shadow .7s infinite alternate;
+}
+@keyframes shadow{
+    0%{
+        text-shadow: 4px 2px 6px #ccc;
+    }
+    100%{
+        text-shadow: 4px 6px 6px #ccc;
+    }
+}
+@keyframes jumping{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-20px);
+    }
+}
+
+.head .btn:hover{
+    transform: scale(1.1, 1.1);
+}
+.head .btn:hover svg{
+    animation: change 2s infinite;
+}
+@keyframes change{
+    0%{
+        transform: rotate(0);
+    }
+    25%{
+        transform: rotate(45deg);
+    }
+    50%{
+        transform: rotate(0);
+    }
+    75%{
+        transform: rotate(-45deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
+
+.head .list{
+    background: linear-gradient(#333,#222,#111);
+    width: 100vw;
+    top: 4.5rem;
+    left: 0;
+    z-index: 99;
+}
+
+.main{
+    background: linear-gradient(#333,#222,#111);
+}
+.main .leftCon{
+    height: calc(100vh - 4.5rem);
+    background: url(../h5-学生管理系统/bg.png);
+}
+.main .leftCon nav a{
+    width: 180px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    transition: .3s ease-in-out;
+}
+.leftCon nav a:hover, .leftCon nav a.active {
+    background: rgba(255,255,255,.3);
+}
+.main .rightCon {
+    height: calc(100vh - 4.5rem);
+    background: #e5e5e5;
+    box-sizing: border-box;
+}
+html{
+    font-size: 14px;
+}
+.head{
+    height: 4.5rem;
+    background: linear-gradient(90deg, #333, #111, #999);
+}
+.head .bg{
+    background: url(../img/bg.png);
+}
+.head .navbar-brand span:nth-of-type(2){
+    animation-delay: 0.25s;
+}
+.head .navbar-brand span:nth-of-type(3){
+    animation-delay: 0.5s;
+}.head .navbar-brand span:nth-of-type(4){
+    animation-delay: 0.75s;
+}
+.head .navbar-brand span{
+    margin-left: 1rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    vertical-align: middle;
+    text-shadow: 4px 2px 6px #ccc;
+    animation: jumping .7s infinite alternate,
+               shadow .7s infinite alternate;
+}
+@keyframes shadow{
+    0%{
+        text-shadow: 4px 2px 6px #ccc;
+    }
+    100%{
+        text-shadow: 4px 6px 6px #ccc;
+    }
+}
+@keyframes jumping{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-20px);
+    }
+}
+
+.head .btn:hover{
+    transform: scale(1.1, 1.1);
+}
+.head .btn:hover svg{
+    animation: change 2s infinite;
+}
+@keyframes change{
+    0%{
+        transform: rotate(0);
+    }
+    25%{
+        transform: rotate(45deg);
+    }
+    50%{
+        transform: rotate(0);
+    }
+    75%{
+        transform: rotate(-45deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
+
+.head .list{
+    background: linear-gradient(#333,#222,#111);
+    width: 100vw;
+    top: 4.5rem;
+    left: 0;
+    z-index: 99;
+}
+
+.main{
+    background: linear-gradient(#333,#222,#111);
+}
+.main .leftCon{
+    height: calc(100vh - 4.5rem);
+    background: url(../img/bg.png);
+}
+.main .leftCon nav a{
+    width: 180px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    transition: .3s ease-in-out;
+}
+.leftCon nav a:hover, .leftCon nav a.active {
+    background: rgba(255,255,255,.3);
+}
+.main .rightCon {
+    height: calc(100vh - 4.5rem);
+    background: #e5e5e5;
+    box-sizing: border-box;
+}
+#student-echarts .row  div{
+    width: 500px;
+    height: 400px;
+    /* border: 1px solid black; */
+    float: left;
+    margin-right: 50px;
+}

@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.trunPage-ul{
+    overflow: hidden;
+    font-size: 14px;
+}
+.trunPage-ul li{
+    float: left;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+.trunPage-ul span{
+    float: left;
+    padding: 2px 5px;
+    margin-right: 10px;
+}
+.trunPage-ul .cur-page{
+    color: #fff;
+    background: #62a7ec;
+}
